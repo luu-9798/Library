@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="title_display">Title: %s</string>
+    <string name="author_display">Author: %s</string>
+    <string name="status_display">Status: %s</string>
+    <string name="fee_display">Fee: %s</string>
+    <string name="last_edited_display">Last Edited: %s</string>
+</resources>
