@@ -1,5 +1,6 @@
 package com.luu9798.library.network
 
+import com.google.gson.Gson
 import com.luu9798.library.model.Book
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -19,7 +20,10 @@ class BookRepository {
     }
 
     fun getBooks(): Flow<Result<List<Book>>> = flow {
-        val response = retrofitInstance.getBooks()
+        val response = retrofitInstance.getBooks().map {
+            it.realStatus = status.toRealStatus()
+
+        }
         emit(Result.success(response))
     }.catch { e ->
         emit(Result.failure(e))
